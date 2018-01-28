@@ -4,6 +4,7 @@ import com.fasterxml.jackson.core.JsonParser;
 import org.apache.commons.cli.CommandLine;
 import org.apache.commons.cli.ParseException;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -53,6 +54,8 @@ public class Main {
             System.out.println("Argument parsing failed" + ex.getMessage());
         } catch (IllegalArgumentException ex) {
             System.out.println("Try again. " + ex.getMessage());
+        }catch(IOException ex){
+            System.out.println("Connection failed");
         }
     }
 }
